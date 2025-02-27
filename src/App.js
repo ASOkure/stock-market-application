@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import DayIntervalChart from "./components/DayIntervalChart";
 import "./App.css";
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         setData={setData}
         setDayIntervalData={setDayIntervalData}
       />
+      <DayIntervalChart dayIntervalData={dayIntervalData} id="first" />
+      <DayIntervalChart dayIntervalData={dayIntervalData} id="second" />
     </div>
   );
 }

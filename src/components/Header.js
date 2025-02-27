@@ -8,7 +8,7 @@ export default function Header(props) {
   useEffect(() => {
     axios
       .get(
-        `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&interval=5min&apikey=NC5QYUKSL49HP9MU`
+        `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=props.name&interval=5min&apikey=NC5QYUKSL49HP9MU`
       )
       .then((data) => {
         const newDayIntervalDataLabels = [];
@@ -39,7 +39,7 @@ export default function Header(props) {
     props.setName(event.target.value);
   }
   function handleClick(event) {
-    if (props.name == "") return;
+    if (props.name === "") return;
     console.log("this is the value of the stock : ", props.name);
     axios
       .get(
